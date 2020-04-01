@@ -23,8 +23,8 @@
         <input type="text" name="pass" placeholder="votre mot de passe">
         <input type="text" name="passConf" placeholder="confirmer votre mot de pass">
         <input type="submit" value="S'inscrire">
-
-        <?php 
+          
+        <?php // Gestion de l affichage des messages
           if(isset($_GET['message']))
 
             $message = $_GET['message'];
@@ -35,23 +35,23 @@
                 break;
 
                 case 1:
-                  echo'Utilisateur Créée';
+                  echo'<div class="alert-success" role="alert"><strong>Utilisateur Créée</strong></div>';
                   break;
 
                   case 2:
-                    echo'confirmation de mot de pass different du mot de pass';
+                    echo'<div class="alert-danger" role="alert"><strong>Vos mots de pass sont different</strong></div>';
                     break;
 
                     case 3:
-                      echo'Utilisateur déja enregistré';
+                      echo'<div class="alert-danger" role="alert"><strong>Utilisateur déja enregistré</strong></div>';
                       break;
 
                       case 4:
-                        echo'Formulaire incomplet';
+                        echo'<div class="alert-danger" role="alert"><strong>Formulaire incomplet</strong></div>';
                         break;
 
                         case 5:
-                          echo'Erreur de connection a la BDD';
+                          echo'<div class="alert-danger" role="alert"><strong>Erreur de connection a la BDD</strong></div>';
                           break;
         
               
