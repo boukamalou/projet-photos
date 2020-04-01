@@ -12,23 +12,42 @@ try {
     die(header('Location: ../index.php'));
 }
 
-if(!empty($_POST['mail'])&&!empty($_POST['pass'])&&!empty($_POST['passConf']))
+if(!empty($_POST['mail'])&&!empty($_POST['pass'])&&!empty($_POST['passConf'])) //Controle si tous les champs formulaire on était rempli
 {
-    $Email = $_POST['mail'];
-    $Pass = $_POST['pass'];
-    $PassConf = $_POST['passConf'];
+    $Email = htmlspecialchars($_POST['mail']) ;
+    $Pass = htmlspecialchars($_POST['pass']) ;
+    $PassConf = htmlspecialchars( $_POST['passConf']);
 
-    if($_POST['pass']!=$_POST['passConf'])
-    {
-        header('Location: ../views/register.php?erreur=2');
-    }
+    $bdd_select = $cnx->prepare("SELECT email FROM user WHERE email=:mail"); // recupération des utilisateur en Base de donnée
+    $bdd_select->execute(array('mail'=> $Email));
+    $bdd_select->fetch(PDO::FETCH_OBJ);
+        
+    if($bdd_select->rowCount()==0) // Controle Si l utilisateur n existe pas
+        {
+                
+            if($_POST['pass']!=$_POST['passConf']) // controle si les champs mot de passe sont identique
+            {
+                header('Location: ../views/register.php?erreur=2');
+            }
+    
+            else // insertion de l utilisateur en base de donnée
+            {
+                $bdd_create = $cnx->prepare("INSERT INTO `user`(`email`, `password`) VALUES (:mail , :pass)");
+                $bdd_create->execute(array('mail'=> $Email, 'pass'=> $Pass ));
+                echo 'utilisateur '.$Email .' créer';
+                var_dump($bdd_select);
+            }
+        } 
 
-    else
-    {
-        $bdd = $cnx->prepare("INSERT INTO user ('email','password') VALUES (:mail,:pass)");
-        $bdd->execute(array('mail'=> $Email, 'pass'=> $Pass ));
-        echo 'utilisateur créer';
-    }
+        else{
+            echo 'Utilisateur déja enregistré';
+        }
+    
+
+    
+
+
+    
 
 }
 
@@ -39,4 +58,3 @@ else{
 
 
 
-var_dump($_SESSION) ;
