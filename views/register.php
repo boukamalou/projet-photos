@@ -18,57 +18,66 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   
     <div class="container">
-      <form action="../controller/inscription.php" method="post">
-      
-        <input type="text" name="mail" placeholder="votre email">
-        <input type="text" name="pass" placeholder="votre mot de passe">
-        <input type="text" name="passConf" placeholder="confirmer votre mot de pass">
-        <input type="submit" value="S'inscrire">
-          
-          <?php // Gestion de l affichage des messages
-            if(!empty($_GET['message']))
+      <div class="text-center p-4">
+        <?php // Gestion de l affichage des messages
+          if(!empty($_GET['message'])){
 
-              
-            {
-              switch ($_GET['message']) {
+            switch ($_GET['message']) {
                 case 0:
-                  echo'';
+                    echo'';
                   break;
 
-                  case 1:
-                    echo'<div class="alert-success" role="alert"><strong>Utilisateur Créée</strong></div>';
+                case 1:
+                    echo'<div class="alert-success p-2" role="alert"><strong>Utilisateur Créée</strong></div>';
+                  break;
+
+                case 2:
+                    echo'<div class="alert-danger p-2" role="alert"><strong>Vos mots de pass sont different</strong></div>';
+                  break;
+
+                case 3:
+                    echo'<div class="alert-danger p-2" role="alert"><strong>Utilisateur déja enregistré</strong></div>';
+                  break;
+
+                case 4:
+                    echo'<div class="alert-danger p-2" role="alert"><strong>Formulaire incomplet</strong></div>';
+                  break;
+
+                case 5:
+                      echo'<div class="alert-danger p-2" role="alert"><strong>Erreur de connection a la BDD</strong></div>';
                     break;
-
-                    case 2:
-                      echo'<div class="alert-danger" role="alert"><strong>Vos mots de pass sont different</strong></div>';
-                      break;
-
-                      case 3:
-                        echo'<div class="alert-danger" role="alert"><strong>Utilisateur déja enregistré</strong></div>';
-                        break;
-
-                        case 4:
-                          echo'<div class="alert-danger" role="alert"><strong>Formulaire incomplet</strong></div>';
-                          break;
-
-                          case 5:
-                            echo'<div class="alert-danger" role="alert"><strong>Erreur de connection a la BDD</strong></div>';
-                            break;
-          
-                
-                default:
+            
                   
-                  break;
-              }
-
+                  default:
+                    
+                    break;
+                }
             }
-          
-          
-          
-          ?>
+        ?>
+      </div>
+      
+    
+      <form action="../controller/inscription.php" method="post">
 
-      </form>
-    </div>
-   
+          <div class="form-group w-50">
+            <label for="email">Adresse email :</label>
+            <input type="email" class="form-control" name="mail" id="email" placeholder="Entrer votre adresse email">
+          </div>
+
+          <div class="form-group  w-50">
+            <label for="pass">Votre mot de passe</label>
+            <input type="password" class="form-control" name="pass" id="pass" placeholder="Entrer votre mot de passe">
+          </div>
+
+          <div class="form-group  w-50">
+            <label for="Confpass">Confirmation du mot de passe</label>
+            <input type="password" class="form-control" name="passConf" id="Confpass" placeholder="Confirmer votre mot de passe">
+          </div>
+
+        <button type="submit" class="btn btn-primary mb-2">s'inscrire</button>
+      
+    </form>
+
+
   </body>
 </html>
