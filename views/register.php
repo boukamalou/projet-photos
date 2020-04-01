@@ -26,11 +26,11 @@
         <input type="submit" value="S'inscrire">
           
           <?php // Gestion de l affichage des messages
-            if(isset($_GET['message']))
+            if(!empty($_GET['message']))
 
-              $message = $_GET['message'];
+              
             {
-              switch ($message) {
+              switch ($_GET['message']) {
                 case 0:
                   echo'';
                   break;

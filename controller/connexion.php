@@ -18,7 +18,45 @@ $pass='';
 
 try {
     $cnx = new PDO($dsn,$user,$pass);
-    echo 'connexion a la BDD reussi<br><br>';
+    
 } catch (PDOException $E) {
     die(header('Location: ../index.php?message=5'));
 }
+
+    if(!empty($_POST ['mail']) && !empty($_POST ['pass']))
+    {
+        $bdd_select = $cnx->prepare("SELECT * FROM user WHERE email=:mail");
+        $bdd_select->execute(array("mail"=> htmlspecialchars($_POST['mail'])));
+        
+        $data = $bdd_select->fetch(PDO::FETCH_ASSOC);
+        
+
+        if ($data) //utilisateur trouvé
+        {
+           
+           // Verification du mot de passe
+
+            if(password_verify($_POST['pass'],$data['password'])) // mot de passe valide
+            {
+                echo 'true';
+            }
+
+            else{ // mot de passe incorrect
+                header('Location: ../views/login.php?message=6'); //Mot de passe incorrect
+            }
+
+            
+        }
+
+        else{  //Utilisateur inconnu
+            header('Location: ../views/login.php?message=7');
+        }
+    }
+
+    else{
+        header('Location: ../views/login.php?message=4'); //Formulaire incomplet
+    }
+
+
+
+

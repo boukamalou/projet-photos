@@ -18,7 +18,7 @@ $pass='';
 
 try {
     $cnx = new PDO($dsn,$user,$pass);
-    echo 'connexion a la BDD reussi<br><br>';
+    
 } catch (PDOException $E) {
     die(header('Location: ../index.php?message=5'));
 }
