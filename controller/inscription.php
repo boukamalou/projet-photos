@@ -7,6 +7,8 @@ MESSAGE :
 3 = Utilisateur Inconnu
 4 = Formulaire incomplet
 5 = Erreur de connection a la BDD 
+6 = Mot de passe incorrect
+7 = Utilisateur inconnu
 */
 session_start();
 
