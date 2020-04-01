@@ -1,4 +1,12 @@
 <?php
+/*
+MESSAGE :
+0 = Erreur de connection a la BDD 
+1 = Utilisateur Créée
+2 = confirmation de mot de pass different du mot de pass
+3 = Utilisateur incomplet
+4 = Formulaire incomplet
+*/
 session_start();
 
 $dsn = 'mysql:host=localhost;dbname=projet_photo;charset=utf8';
@@ -9,7 +17,7 @@ try {
     $cnx = new PDO($dsn,$user,$pass);
     echo 'connexion a la BDD reussi<br><br>';
 } catch (PDOException $E) {
-    die(header('Location: ../index.php'));
+    die(header('Location: ../index.php?message=0'));
 }
 
 if(!empty($_POST['mail'])&&!empty($_POST['pass'])&&!empty($_POST['passConf'])) //Controle si tous les champs formulaire on était rempli
@@ -27,33 +35,30 @@ if(!empty($_POST['mail'])&&!empty($_POST['pass'])&&!empty($_POST['passConf'])) /
                 
             if($_POST['pass']!=$_POST['passConf']) // controle si les champs mot de passe sont identique
             {
-                header('Location: ../views/register.php?erreur=2');
+                header('Location: ../views/register.php?message=2');
             }
     
             else // insertion de l utilisateur en base de donnée
             {
                 $bdd_create = $cnx->prepare("INSERT INTO `user`(`email`, `password`) VALUES (:mail , :pass)");
-                $bdd_create->execute(array('mail'=> $Email, 'pass'=> $Pass ));
-                echo 'utilisateur '.$Email .' créer';
-                var_dump($bdd_select);
+                $bdd_create->execute(array('mail'=> $Email, 'pass'=> password_hash($Pass,PASSWORD_DEFAULT) ));
+                header('Location: ../views/register.php?message=1');
+                
             }
         } 
 
         else{
-            echo 'Utilisateur déja enregistré';
+            header('Location: ../views/register.php?message=3');
         }
     
 
-    
-
-
-    
 
 }
 
-else{
+else // erreur dans les entrée formulaire
+{ 
 
-    header('Location: ../views/register.php?erreur=1');
+        header('Location: ../views/register.php?erreur=4');
 }
 
 
