@@ -25,7 +25,9 @@ if(!empty($_POST['mail'])&&!empty($_POST['pass'])&&!empty($_POST['passConf']))
 
     else
     {
-        
+        $bdd = $cnx->prepare("INSERT INTO user ('email','password') VALUES (:mail,:pass)");
+        $bdd->execute(array('mail'=> $Email, 'pass'=> $Pass ));
+        echo 'utilisateur créer';
     }
 
 }
