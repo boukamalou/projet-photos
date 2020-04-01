@@ -1,11 +1,12 @@
 <?php
 /*
 MESSAGE :
-0 = Erreur de connection a la BDD 
+0 = ''
 1 = Utilisateur Créée
 2 = confirmation de mot de pass different du mot de pass
-3 = Utilisateur incomplet
+3 = Utilisateur Inconnu
 4 = Formulaire incomplet
+5 = Erreur de connection a la BDD 
 */
 session_start();
 
@@ -17,7 +18,7 @@ try {
     $cnx = new PDO($dsn,$user,$pass);
     echo 'connexion a la BDD reussi<br><br>';
 } catch (PDOException $E) {
-    die(header('Location: ../index.php?message=0'));
+    die(header('Location: ../index.php?message=5'));
 }
 
 if(!empty($_POST['mail'])&&!empty($_POST['pass'])&&!empty($_POST['passConf'])) //Controle si tous les champs formulaire on était rempli
@@ -58,7 +59,7 @@ if(!empty($_POST['mail'])&&!empty($_POST['pass'])&&!empty($_POST['passConf'])) /
 else // erreur dans les entrée formulaire
 { 
 
-        header('Location: ../views/register.php?erreur=4');
+        header('Location: ../views/register.php?message=4');
 }
 
 

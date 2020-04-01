@@ -23,6 +23,48 @@
         <input type="text" name="pass" placeholder="votre mot de passe">
         <input type="text" name="passConf" placeholder="confirmer votre mot de pass">
         <input type="submit" value="S'inscrire">
+
+        <?php 
+          if(isset($_GET['message']))
+
+            $message = $_GET['message'];
+          {
+            switch ($message) {
+              case 0:
+                echo'';
+                break;
+
+                case 1:
+                  echo'Utilisateur Créée';
+                  break;
+
+                  case 2:
+                    echo'confirmation de mot de pass different du mot de pass';
+                    break;
+
+                    case 3:
+                      echo'Utilisateur déja enregistré';
+                      break;
+
+                      case 4:
+                        echo'Formulaire incomplet';
+                        break;
+
+                        case 5:
+                          echo'Erreur de connection a la BDD';
+                          break;
+        
+              
+              default:
+                
+                break;
+            }
+
+          }
+        
+        
+        
+        ?>
     
     </form>
   </body>
