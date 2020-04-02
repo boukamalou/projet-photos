@@ -1,5 +1,15 @@
+<?php
+    session_start();
+    
+    if(empty($_SESSION))
+    {
+        header('Location: ../views/login.php');
+    }
 
-    <!doctype html>
+
+?>
+
+<!doctype html>
 <html lang="fr">
   <head>
     <title>Title</title>

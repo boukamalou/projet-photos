@@ -75,7 +75,7 @@
         <div class="container">
             <div class="row">
                 
-                    <p class="border p-2 text-center align-items-center col-sm-8 mr-2"  aria-hidden="true">PARAGRAPHE COMMERCIAL POUR VENTE PHOTO ET DROIS</p>
+                    <p class="border p-2 text-center align-items-center col-sm-8 mr-2"  aria-hidden="true" style="line-height: 8em">PARAGRAPHE COMMERCIAL POUR VENTE PHOTO ET DROIS</p>
                 
                
                     <img src="src/photo" alt="Appareil photo" style="width: 25%">
