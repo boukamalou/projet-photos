@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!doctype html>
 <html lang="fr">
   <head>
@@ -25,9 +28,17 @@
       
     <header class="container mb-5">
         <div class="d-flex flex-row justify-content-end">
-            <a class="btn btn-outline-dark m-1" href="views/login.php">connexion</a>
-            <a class="btn btn-outline-dark m-1" href="views/register.php">Inscription</a>
-            
+           <?php if(empty($_SESSION))
+           {
+               echo ' <a class="btn btn-outline-dark m-1" href="views/login.php">connexion</a>
+               <a class="btn btn-outline-dark m-1" href="views/register.php">Inscription</a>';
+           }
+           else
+           {
+               echo '<a class="btn btn-outline-dark m-1" href="controller/deco.php">Deconnexion</a>';
+           }
+           
+       ?>
         </div>
         <h1 class="ml-5" style="font-family: 'Roboto Mono', monospace">A WORLD OF FACES</h1>
         <h3  style="font-family: 'Indie Flower',cursive;margin-left: 15em">plus qu'un voyage . . .</h3>

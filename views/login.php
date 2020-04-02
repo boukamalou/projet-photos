@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+    ?>
 <!doctype html>
 <html lang="fr">
   <head>
@@ -27,7 +30,7 @@
         <div class="carousel-item active">
         <img class="d-block w-100" src="../src/imageC2" data-src="holder.js/900x400?theme=social" alt="First slide">
         </div>
-        
+
         <div class="carousel-item">
         <img class="d-block w-100" src="../src/imageC1" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
         </div>
@@ -76,6 +79,14 @@
 
                   case 5:
                         echo'<div class="alert-danger p-2" role="alert"><strong>Erreur de connection a la BDD</strong></div>';
+                      break;
+
+                  case 6:
+                      echo'<div class="alert-danger p-2" role="alert"><strong>Mot de passe incorrect</strong></div>';
+                      break;
+                      
+                  case 7:
+                        echo'<div class="alert-danger p-2" role="alert"><strong>Utilisateur inconnu</strong></div>';
                       break;
               
                     

@@ -37,7 +37,8 @@ try {
 
             if(password_verify($_POST['pass'],$data['password'])) // mot de passe valide
             {
-                echo 'true';
+                $_SESSION["newsession"]=1;
+                header ('Location: ../index.php');
             }
 
             else{ // mot de passe incorrect

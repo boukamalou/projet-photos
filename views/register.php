@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+    ?>
 <!doctype html>
 <html lang="fr">
   <head>
@@ -20,7 +23,7 @@
 
     
     <?php include "../part-of-site/nav.php" ?>
-    
+
     <div id="carouselFadeExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
