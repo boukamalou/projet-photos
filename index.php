@@ -48,9 +48,7 @@
         <div class="carousel-item active">
         <img class="d-block w-100" src="src/imageC2" data-src="holder.js/900x400?theme=social" alt="First slide">
         </div>
-        <div class="carousel-item">
-        <img class="d-block w-100" src="src/imageC4" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
-        </div>
+        
         <div class="carousel-item">
         <img class="d-block w-100" src="src/imageC1" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
         </div>
@@ -68,14 +66,46 @@
         </a>
     </div>
 
-   
-        <div>
-            <p>La créativité sans stratégie, cela s'appelle de l'Art. La créativité avec de la stratégie, cela s'appelle de la "Publicité".</p>
-            <p>Jef Richards</p>
+   <!-- BlOC TEXTE-->
+        <div class="m-5 border p-5">
+            <p class="text-center" style="font-size: 1.5em;font-family: 'Roboto Mono', monospace">La créativité sans stratégie, cela s'appelle de l'Art. La créativité avec de la stratégie, cela s'appelle de la "Publicité".</p>
+            <p class="text-right font-italic" style="font-size: 1em;font-size: 1.1em;font-family: 'Roboto Mono', monospace">Jef Richards</p>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                
+                    <p class="border p-2 text-center align-items-center col-sm-8 mr-2"  aria-hidden="true">PARAGRAPHE COMMERCIAL POUR VENTE PHOTO ET DROIS</p>
+                
+               
+                    <img src="src/photo" alt="Appareil photo" style="width: 25%">
+                
+            </div>
+
+            <div class="d-flex flex-column justify-content-center m-5 border p-2">
+                <p class="text-center">Mes dernieres photos</p>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <img src="src/image6" alt="derniere photos" style="width: 90%">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="src/image8" alt="derniere photos" style="width: 90%">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="src/image11" alt="derniere photos" style="width: 90%">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="src/image7" alt="derniere photos" style="width: 90%">
+                        </div>
+                    </div>
+            </div>
+           
         </div>
     
     
-
+    <footer class="bg-light text-right" style="line-height: 5em">
+        <p class="mr-3">&copy; A World of faces All rights reserved ---- 2020 </p>
+    </footer>
   
 
 
