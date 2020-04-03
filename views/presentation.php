@@ -52,7 +52,7 @@
                 </a>
             </div>
 
-            <div class="d-flex flex-row m-5 flex-wrap">
+            <div class="d-flex flex-row m-5 flex-wrap justify-content-center">
                 <div>
                     <h3 class="mb-5">Pain Olivier</h3>
                     <p class="text-justify mr-5">
