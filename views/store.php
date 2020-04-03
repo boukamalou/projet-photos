@@ -131,6 +131,8 @@
 
     </div>
 
-
+            <footer class="bg-light text-right" style="line-height: 5em">
+                 <p class="mr-3">&copy; A World of faces All rights reserved ---- 2020 </p>
+            </footer>
 </body>
 </html>
