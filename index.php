@@ -40,8 +40,17 @@
            
        ?>
         </div>
-        <h1 class="ml-5" style="font-family: 'Roboto Mono', monospace">A WORLD OF FACES</h1>
-        <h3  style="font-family: 'Indie Flower',cursive;margin-left: 15em">plus qu'un voyage . . .</h3>
+        
+        <div class="container">
+            <div class="col-sm-12">
+            <h1 class="ml-5" style="font-family: 'Roboto Mono', monospace">A WORLD OF FACES</h1>
+
+            </div>
+            <div class="col-sm-12">
+            <h3  style="font-family: 'Indie Flower',cursive;">plus qu'un voyage . . .</h3>
+            </div>
+        </div>
+
     </header>
 
    <nav class="navbar d-flex flex-row justify-content-around mb-5 border rounded" style="border-color:#DCDCDC">
@@ -83,21 +92,13 @@
             <p class="text-right font-italic" style="font-size: 1em;font-size: 1.1em;font-family: 'Roboto Mono', monospace">Jef Richards</p>
         </div>
 
-        <div class="container">
-            <div class="row">
-                
-                    <p class="border p-2 text-center align-items-center col-sm-8 mr-2"  aria-hidden="true" style="line-height: 8em">PARAGRAPHE COMMERCIAL POUR VENTE PHOTO ET DROIS</p>
-                
-               
-                    <img src="src/photo" alt="Appareil photo" style="width: 25%">
-                
-            </div>
+        
 
             <div class="d-flex flex-column justify-content-center m-5 border p-2">
                 <p class="text-center">Mes dernieres photos</p>
                     <div class="row ">
                         <div class="col-md-3">
-                            <img src="src/image6" alt="derniere photos" style="width: 90%">
+                            <img src="src/image6" alt="derniere photos" style="width: 90%" class="mb-2">
                         </div>
                         <div class="col-md-3">
                             <img src="src/image8" alt="derniere photos" style="width: 90%">

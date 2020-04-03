@@ -16,8 +16,15 @@
             ?>
             
         </div>
-        <h1 class="ml-5" style="font-family: 'Roboto Mono', monospace">A WORLD OF FACES</h1>
-        <h3  style="font-family: 'Indie Flower',cursive;margin-left: 15em">plus qu'un voyage . . .</h3>
+        <div class="container">
+            <div class="col-sm-12">
+            <h1 class="ml-5" style="font-family: 'Roboto Mono', monospace">A WORLD OF FACES</h1>
+
+            </div>
+            <div class="col-sm-12">
+            <h3  style="font-family: 'Indie Flower',cursive;">plus qu'un voyage . . .</h3>
+            </div>
+        </div>
     </header>
 
    <nav class="navbar d-flex flex-row justify-content-around mb-5 border rounded" style="border-color:#DCDCDC">
